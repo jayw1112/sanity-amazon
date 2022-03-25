@@ -46,7 +46,7 @@ export default function ProductScreen(props) {
           { slug }
         )
         setState({ ...state, product, loading: false })
-      } catch (error) {
+      } catch (err) {
         setState({ ...state, error: err.message, loading: false })
       }
     }

@@ -17,7 +17,7 @@ export default function Home() {
       try {
         const products = await client.fetch(`*[_type == "product"]`)
         setState({ products, loading: false })
-      } catch (error) {
+      } catch (err) {
         setState({ loading: false, error: err.message })
       }
     }
