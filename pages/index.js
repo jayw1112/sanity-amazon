@@ -2,10 +2,10 @@ import { Alert, CircularProgress, Grid, Typography } from '@mui/material'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { useSnackbar } from 'notistack'
+import { useContext, useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import ProductItem from '../components/ProductItem'
 import client from '../utils/client'
-import { useState, useEffect, useContext } from 'react'
 import { urlForThumbnail } from '../utils/image'
 import { Store } from '../utils/Store'
 
@@ -55,7 +55,7 @@ export default function Home() {
         quantity,
       },
     })
-    enqueueSnackbar(`${product.name} added to the cart`, {
+    enqueueSnackbar(`${product.name} Added to the cart`, {
       variant: 'success',
     })
     router.push('/cart')
@@ -71,7 +71,10 @@ export default function Home() {
         <Grid container spacing={3}>
           {products.map((product) => (
             <Grid item md={4} key={product.slug}>
-              <ProductItem product={product}></ProductItem>
+              <ProductItem
+                product={product}
+                addToCartHandler={addToCartHandler}
+              ></ProductItem>
             </Grid>
           ))}
         </Grid>
