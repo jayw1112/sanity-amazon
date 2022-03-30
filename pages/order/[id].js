@@ -90,7 +90,7 @@ function OrderScreen({ params }) {
 
         dispatch({ type: 'FETCH_SUCCESS', payload: data })
       } catch (error) {
-        dispatch({ type: 'FETCH_FAIL', payload: getError(err) })
+        dispatch({ type: 'FETCH_FAIL', payload: getError(error) })
       }
     }
     if (!order._id || successPay || (order._id && order._id !== orderId)) {
@@ -143,13 +143,13 @@ function OrderScreen({ params }) {
         dispatch({ type: 'PAY_SUCCESS', payload: data })
         enqueueSnackbar('Order Paid', { variant: 'success' })
       } catch (error) {
-        dispatch({ type: 'PAY_FAIL', payload: getError(err) })
-        enqueueSnackbar(getError(err), { variant: 'error' })
+        dispatch({ type: 'PAY_FAIL', payload: getError(error) })
+        enqueueSnackbar(getError(error), { variant: 'error' })
       }
     })
   }
-  function onError(err) {
-    enqueueSnackbar(getError(err), { variant: 'error' })
+  function onError(error) {
+    enqueueSnackbar(getError(error), { variant: 'error' })
   }
   return (
     <Layout title={`Order ${orderId}`}>

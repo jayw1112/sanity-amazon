@@ -119,7 +119,7 @@ export default function LoginScreen() {
             </Button>
           </ListItem>
           <ListItem>
-            Don't have an account?
+            Do not have an account?{' '}
             <NextLink href={`/register?redirect=${redirect || '/'}`} passHref>
               <Link style={{ padding: 2 }}> Register</Link>
             </NextLink>

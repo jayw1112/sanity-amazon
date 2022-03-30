@@ -53,7 +53,7 @@ function ProfileScreen() {
       jsCookie.set('userInfo', JSON.stringify(data))
       enqueueSnackbar('Profile updated successfully', { variant: 'success' })
     } catch (error) {
-      enqueueSnackbar(getError(err), { variant: 'error' })
+      enqueueSnackbar(getError(error), { variant: 'error' })
     }
   }
   return (

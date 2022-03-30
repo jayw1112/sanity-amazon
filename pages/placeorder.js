@@ -84,7 +84,7 @@ function PlaceOrderScreen() {
       router.push(`/order/${data}`)
     } catch (error) {
       setLoading(false)
-      enqueueSnackbar(getError(err), { variant: 'error' })
+      enqueueSnackbar(getError(error), { variant: 'error' })
     }
   }
   return (

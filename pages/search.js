@@ -63,7 +63,7 @@ export default function SearchScreen() {
         const { data } = await axios.get(`/api/products/categories`)
         setCategories(data)
       } catch (error) {
-        console.log(err.message)
+        console.log(error.message)
       }
     }
     fetchCategories()
@@ -97,8 +97,8 @@ export default function SearchScreen() {
 
         const products = await client.fetch(gQuery)
         setState({ products, loading: false })
-      } catch (err) {
-        setState({ error: err.message, loading: false })
+      } catch (error) {
+        setState({ error: error.message, loading: false })
       }
     }
     fetchData()

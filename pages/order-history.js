@@ -56,7 +56,7 @@ function OrderHistoryScreen() {
 
         dispatch({ type: 'FETCH_SUCCESS', payload: data })
       } catch (error) {
-        dispatch({ type: 'FETCH_FAIL', payload: getError(err) })
+        dispatch({ type: 'FETCH_FAIL', payload: getError(error) })
       }
     }
     fetchOrders()
